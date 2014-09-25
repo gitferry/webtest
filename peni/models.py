@@ -10,3 +10,7 @@ class Port(models.Model):
 	target = models.ForeignKey(PortTarget)
 	number = models.CharField(max_length=20)
 	details = models.CharField(max_length=100)
+
+class WebInfo(models.Model):
+	target = models.ForeignKey(PortTarget)
+	info = models.CharField(max_length=100)

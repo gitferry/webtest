@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from func import information_gathering, result
-from models import PortTarget, Port
+from models import PortTarget, Port, WebInfo
 
 def home(request):
 	return render(request, 'peni/home.html', {})
@@ -13,6 +13,11 @@ def search(request):
 	target.sys_info = r.operatingsystem
 	target.ip = search_url
 	target.save()
+	for item in r.webinformation:
+		info.target = target
+		info = WebInfo()
+		info.info = item
+		info.save()
 	for key in r.portservice:
 		port = Port()
 		port.target = target
