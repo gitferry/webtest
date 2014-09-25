@@ -15,7 +15,7 @@ def nmap(ip, result):
     #command = 'nmap -T4 -A -v ' + ip
     #output = commands.getoutput(command)
     #output = os.popen(command).readlines()
-    process = subprocess.Popen(command, shell = True, stdout=subprocess.PIPE)
+    process = subprocess.Popen(command, shell = True, stdout=subprocess.PIPE, cwd= 'E:\\Program Files (x86)\\Nmap\\')
     process.wait()
     output = process.stdout.readlines()
     start = False
@@ -41,8 +41,9 @@ def nmap(ip, result):
             result.operatingsystem = parts[1]
     #print stdoutput
 
-t = result.result()
-nmap("10.0.0.55", t)
-print t.operatingsystem
-for key in t.portservice.keys():
-    print key + ':' + t.portservice[key]
+if __name__ == 'main':
+    t = result.result()
+    nmap("10.0.0.55", t)
+    print t.operatingsystem
+    for key in t.portservice.keys():
+        print key + ':' + t.portservice[key]
