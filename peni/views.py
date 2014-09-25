@@ -14,8 +14,8 @@ def search(request):
 	target.ip = search_url
 	target.save()
 	for item in r.webinformation:
-		info.target = target
 		info = WebInfo()
+		info.target = target
 		info.info = item
 		info.save()
 	for key in r.portservice:
