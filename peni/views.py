@@ -9,6 +9,7 @@ def search(request):
 	search_url = request.GET['q']
 	r = result.result()
 	information_gathering.nmap(search_url, r)
+	information_gathering.whatweb(search_url, r)
 	target = PortTarget()
 	target.sys_info = r.operatingsystem
 	target.ip = search_url
