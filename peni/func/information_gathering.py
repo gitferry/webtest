@@ -15,7 +15,7 @@ def nmap(ip, result):
     #command = 'nmap -T4 -A -v ' + ip
     #output = commands.getoutput(command)
     #output = os.popen(command).readlines()
-    process = subprocess.Popen(command, shell = True, stdout=subprocess.PIPE, cwd= 'E:\\Program Files (x86)\\Nmap\\')
+    process = subprocess.Popen(command, shell = True, stdout=subprocess.PIPE)
     process.wait()
     output = process.stdout.readlines()
     start = False
@@ -41,9 +41,19 @@ def nmap(ip, result):
             result.operatingsystem = parts[1]
     #print stdoutput
 
-if __name__ == 'main':
+def whatweb(ip, result):
+    command_t = Template('whatweb --no-error ${target}')
+    command = command_t.substitute(lang = 'Python', target = ip)
+    process = subprocess.Popen(command, shell = True, stdout=subprocess.PIPE)
+    process.wait()
+    output = process.stdout.readlines()
+    print output[0]
+
+if __name__ == '__main__':
+    print 'hello'
     t = result.result()
-    nmap("10.0.0.55", t)
-    print t.operatingsystem
-    for key in t.portservice.keys():
-        print key + ':' + t.portservice[key]
+    #nmap("10.0.0.55", t)
+    #print t.operatingsystem
+    #for key in t.portservice.keys():
+    #    print key + ':' + t.portservice[key]
+    whatweb('http://211.155.81.16/', t)
