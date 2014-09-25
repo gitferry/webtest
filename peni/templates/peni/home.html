@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load staticfiles %}
+    <link rel="stylesheet" type="text/css" href="{% static 'peni/style.css' %}" />
+    <title>{% block title %}Web Test Site{% endblock %}</title>
+</head>
+
+<body>
+    <div id="search">
+        {% block search %}
+            <div class="intro">
+                <img class="img-logo" height="200" title="ZoomEye - Cyberspace Search Engine" src="{% static 'peni/logo.png' %}">
+                <br>
+            </div>
+            <form id="search_form" class="wmap" method="get" action="{% url 'search' %}">
+                <input class="text" type="text" name="q" data-items="4" data-provide="typeahead" autocomplete="off">
+                <input id="search_btn" class="btn btn-info" type="submit" value="Scan">
+                <br>
+            </form>
+        {% endblock %}
+    </div>
+</body>
+</html>

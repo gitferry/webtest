@@ -23,6 +23,7 @@ SECRET_KEY = '5g)_41yp85$$(u52%k^^aex1mga6^xkh7fptis4g6u2yy+l-ty'
 DEBUG = True
 
 TEMPLATE_DEBUG = True
+TEMPLATE_DIRS = [os.path.join(BASE_DIR, 'templates')]
 
 ALLOWED_HOSTS = []
 
@@ -36,6 +37,7 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'peni',
 )
 
 MIDDLEWARE_CLASSES = (

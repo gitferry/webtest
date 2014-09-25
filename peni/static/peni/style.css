@@ -1,0 +1,79 @@
+html, body, #search, #footer {
+    width: 100%;
+}
+#search {
+    height: 575px;
+    min-height: 575px;
+    overflow: hidden;
+    width: 100%;
+    z-index: -1;
+}
+
+body, input, ul {
+    list-style: none outside none;
+}
+body {
+    font-family: "Helvetica Neue",Helvetica,Arial,"Microsoft Yahei UI","Microsoft YaHei",SimHei,"宋体",simsun,sans-serif;
+    color: #333333;
+    font-size: 14px;
+    line-height: 20px;
+    background: url("map-bg.jpg");
+}
+#search .intro {
+    color: #FFFFFF;
+    margin: 110px auto 0;
+    padding-bottom: 10px;
+    text-align: center;
+}
+
+body, input, ul {
+    list-style: none outside none;
+}
+#search form.wmap {
+    margin: 0 auto;
+    width: 560px;
+}
+
+
+.wmap .btn {
+    border-radius: 0 4px 4px 0;
+    height: 32px;
+    margin-left: -4px;
+    min-width: 80px;
+    padding: 5px;
+}
+#search form.wmap {
+    margin: 0 auto;
+    width: 560px;
+}
+
+#search .text, #subsearch .text {
+    background: none repeat scroll 0 0 #ECECEC;
+    border: 1px solid #333333;
+    color: #444444;
+    font-size: 16px;
+    height: 22px;
+    line-height: 22px;
+    margin-bottom: 0;
+    padding: 5px 10px;
+    transition: all 0.8s ease 0s;
+    width: 450px;
+}
+.wmap .text {
+    border-radius: 4px 0 0 4px;
+    box-shadow: 1px 1px 6px 0 rgba(0, 0, 0, 0.75) inset;
+}
+.btn-info {
+    background-color: #49AFCD;
+    background-image: linear-gradient(to bottom, #5BC0DE, #2F96B4);
+    background-repeat: repeat-x;
+    border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+    color: #FFFFFF;
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+}
+.btn-info:hover, .btn-info:focus, .btn-info:active, .btn-info.active, .btn-info.disabled, .btn-info[disabled] {
+    background-color: #2F96B4;
+    color: #FFFFFF;
+}
+.btn-info:active, .btn-info.active {
+}
