@@ -1,6 +1,6 @@
 <h1>{{ target.ip }}端口扫描结果</h1>
 <ul>
 {% for port in target.port_set.all %}
-    <li>{{ port.details }}</li>
+    <li>{{ port.number }}: {{ port.details }}</li>
 {% endfor %}
 </ul>

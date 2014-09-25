@@ -12,9 +12,11 @@ def search(request):
 	target = PortTarget()
 	target.sys_info = r.operatingsystem
 	target.ip = search_url
+	target.save()
 	for key in r.portservice:
 		port = Port()
-		port.target = target.pk
+		port.target = target
 		port.number = key
 		port.details = r.portservice[key]
-	return render(request, 'peni/portdetail.html', {'target': target})
+		port.save()
+	return render(request, 'peni/detail.html', {'target': target})

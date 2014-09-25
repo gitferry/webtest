@@ -42,12 +42,20 @@ def nmap(ip, result):
     #print stdoutput
 
 def whatweb(ip, result):
-    command_t = Template('whatweb --no-error ${target}')
+    command_t = Template('whatweb --no-error --colour=never ${target}')
     command = command_t.substitute(lang = 'Python', target = ip)
     process = subprocess.Popen(command, shell = True, stdout=subprocess.PIPE)
     process.wait()
     output = process.stdout.readlines()
-    print output[0]
+    line = output[0]
+    parts = line.split(', ')
+    for part in parts:
+        result.webinformation.append(part)
+        #tparts = part.split(r'[')
+        #tkey = tparts[0]
+        #tvalue = part[len(tkey):]
+        #print tkey
+
 
 if __name__ == '__main__':
     print 'hello'
@@ -57,3 +65,5 @@ if __name__ == '__main__':
     #for key in t.portservice.keys():
     #    print key + ':' + t.portservice[key]
     whatweb('http://211.155.81.16/', t)
+    for info in t.webinformation:
+        print info
