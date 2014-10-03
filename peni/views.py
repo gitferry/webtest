@@ -4,6 +4,7 @@ from func import exploit, scan
 from models import PortTarget, Port, WebInfo
 from django.http import HttpResponseRedirect
 import random
+import os
 
 def home(request):
 	return render(request, 'peni/home.html', {})
@@ -34,5 +35,6 @@ def bug_scan(request):
 	scan_url = request.GET['q']
 	r = result.result()
 	ran = str(random.randint(0, 10000))
+	os.makedirs('/home/penetration/webtest/peni/static/peni/' + ran + '/')
 	scan.wapiti(scan_url, r, '/home/penetration/webtest/peni/static/peni/' + ran + '/')
 	return HttpResponseRedirect('../../static/peni/' + ran + '/generated_report/index.html')
