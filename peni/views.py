@@ -33,4 +33,4 @@ def bug_scan(request):
 	scan_url = request.GET['q']
 	r = result.result()
 	scan.wapiti(scan_url, r, '/home/penetration/webtest/peni/static/')
-	return HttpResponseRedirect('static/peni/generated_report/index.html')
+	return HttpResponseRedirect('../../static/peni/generated_report/index.html')
