@@ -41,6 +41,10 @@ def scan_openvas(request, scan_url, r):
 	scan.openvas(scan_url, r)
 	return HttpResponseRedirect(r.openvas_report)
 
+def scan_wps(request, scan_url, r):
+	scan.wpscan(scan_url, r)
+	return render(request, 'peni/wpsdetail.html', {'content': r.wpscan_output, 'url': scan_url})
+
 def bug_scan(request):
 	scan_url = request.GET['q']
 	r = result.result()
@@ -49,3 +53,5 @@ def bug_scan(request):
 		return scan_wapiti(request, scan_url, r)
 	elif choose == '2':
 		return scan_openvas(request, scan_url, r)
+	elif choose == '3':
+		return scan_wps(request, scan_url, r)
