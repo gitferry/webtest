@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from func import information_gathering, result
+from func import exploit, scan
 from models import PortTarget, Port, WebInfo
 
 def home(request):
@@ -26,3 +27,9 @@ def search(request):
 		port.details = r.portservice[key]
 		port.save()
 	return render(request, 'peni/detail.html', {'target': target})
+
+def bug_scan(request):
+	scan_url = request.GET['q']
+	r = result.result()
+	scan.wapiti(scan_url, r, '/home/penetration/webtest/peni/')
+	return render(request, r.webreport, {})
