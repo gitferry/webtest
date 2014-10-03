@@ -48,4 +48,4 @@ def bug_scan(request):
 	if choose == '1':
 		scan_wapiti(request, scan_url, r)
 	elif choose == '2':
-		scan_openvas(request, scan_url, r)
+		return scan_openvas(request, scan_url, r)
