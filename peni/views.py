@@ -32,7 +32,7 @@ def search(request):
 def bug_scan(request):
 	scan_url = request.GET['q']
 	r = result.result()
-	scan.wapiti(scan_url, r, '/home/penetration/webtest/peni/')
+	scan.wapiti(scan_url, r, '/home/penetration/webtest/')
 	fobj = open(r.webreport)
 	contents = fobj.readlines()
 	fobj.close()
