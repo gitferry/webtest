@@ -2,7 +2,7 @@ from django.shortcuts import render
 from func import information_gathering, result
 from func import exploit, scan
 from models import PortTarget, Port, WebInfo
-from django.http import HttpResponse
+from django.http import HttpResponseRedirect
 
 def home(request):
 	return render(request, 'peni/home.html', {})
@@ -32,9 +32,5 @@ def search(request):
 def bug_scan(request):
 	scan_url = request.GET['q']
 	r = result.result()
-	scan.wapiti(scan_url, r, '/home/penetration/webtest/peni/')
-	fobj = open(r.webreport)
-	contents = fobj.read()
-	contents.replace('include', '/home/penetration/webtest/peni/include')
-	fobj.close()
-	return HttpResponse(contents)
+	scan.wapiti(scan_url, r, '/home/penetration/webtest/peni/static/')
+	return HttpResponseRedirect('static/peni/generated_report/index.html')
