@@ -31,10 +31,21 @@ def search(request):
 		port.save()
 	return render(request, 'peni/detail.html', {'target': target})
 
-def bug_scan(request):
-	scan_url = request.GET['q']
-	r = result.result()
+def scan_wapiti(request, scan_url, r):
 	ran = str(random.randint(0, 10000))
 	os.makedirs('/home/penetration/webtest/peni/static/peni/' + ran + '/')
 	scan.wapiti(scan_url, r, '/home/penetration/webtest/peni/static/peni/' + ran + '/')
 	return HttpResponseRedirect('../../static/peni/' + ran + '/generated_report/index.html')
+
+def scan_openvas(request, scan_url, r):
+	scan.openvas(scan_url, r)
+	return HttpResponseRedirect(r.openvas_report)
+
+def bug_scan(request):
+	scan_url = request.GET['q']
+	r = result.result()
+	choose = request.GET['id']
+	if choose == '1':
+		scan_wapiti(request, scan_url, r)
+	elif choose == '2':
+		scan_openvas(request, scan_url, r)
