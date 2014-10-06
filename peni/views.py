@@ -82,6 +82,20 @@ def sql_getable(request):
 	content += '</table>'
 	return HttpResponse(content)
 
+def sql_getfiles(request):
+	scan_url = request.GET['q']
+	db_name = request.GET['db']
+	table_name = request.GET['table']
+	r= result.result()
+	exploit.sqlmap_dumptables(scan_url, db_name, table_name, r)
+	path_list = r.sqlmap_dumpfiles
+	content = '<table>'
+	for path in path_list:
+		fobj = open(path)
+		content += '<tr><td>' + path + '<td/><td>' + fobj.read(100) + '</td></tr>'
+	content += '</table>'
+	return HttpResponse(content)
+
 
 def sql_injection(request):
 	return render(request, 'peni/sqlindex.html', {})

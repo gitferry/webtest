@@ -50,6 +50,31 @@
   			xmlhttp.open("GET",url,true);
   			xmlhttp.send();
 		}
+        function getfiles()
+		{
+			var xmlhttp;
+			if (window.XMLHttpRequest)
+  			{// code for IE7+, Firefox, Chrome, Opera, Safari
+  				xmlhttp=new XMLHttpRequest();
+  			}
+  			else
+  			{// code for IE6, IE5
+  				xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+  			}
+  			xmlhttp.onreadystatechange=function()
+  			{
+  				if (xmlhttp.readyState==4 && xmlhttp.status==200)
+  				{
+  					document.getElementById("files").innerHTML+=xmlhttp.responseText;
+  				}
+  			}
+  			var target = document.getElementById("text").value;
+            var target2 = document.getElementById("text2").value;
+            var target3 = document.getElementById("text3").value;
+  			var url = './getfiles/?q=' + target + '&db=' + target2 + '&table=' + target3;
+  			xmlhttp.open("GET",url,true);
+  			xmlhttp.send();
+		}
 </script>
 </head>
 
@@ -73,5 +98,12 @@
                onclick="gettable()">
         <br/>
     </div>
+    <input id="text3" class="text" type="text" name="q3">
+            <br>
+        <div class="listfiles" id="files">
+            <input id="listfiles_btn" class="listbtn" type="submit" value="Dump"
+                   onclick="getfiles()">
+            <br/>
+        </div>
 </body>
 </html>
