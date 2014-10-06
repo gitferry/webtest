@@ -76,10 +76,9 @@ def sql_getable(request):
 	r= result.result()
 	exploit.sqlmap_findtables(scan_url, db_name, r)
 	tablelist = r.sqlmap_tables
-	print tablelist
 	content = '<table>'
-	for table in tablelist:
-		content += '<tr><td>' + table + '<td/></tr>'
+	for item in tablelist[db_name]:
+		content += '<tr><td>' + item + '<td/></tr>'
 	content += '</table>'
 	return HttpResponse(content)
 
