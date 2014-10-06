@@ -6,11 +6,13 @@ import re
 __author__ = 'ruluo1992-PC'
 
 def wapiti(ip, result, basedir):
-    command_t = Template('wapiti ${target}')
-    command = command_t.substitute(lang = 'Python', target = ip)
-    process = subprocess.Popen(command, shell = True, stdout=subprocess.PIPE, cwd = basedir)
+    if not ip.startswith('http://'):
+        ip = 'http://' + ip
+    command_t = Template('wapiti ${target} -k -f html -o ${base}')
+    command = command_t.substitute(lang = 'Python', target = ip, base = basedir)
+    process = subprocess.Popen(command, shell = True, stdout=subprocess.PIPE)
     process.wait()
-    result.webreport = basedir + 'generated_report/index.html'
+    result.webreport = basedir + 'index.html'
 
 def openvas_create_target(ip):
      #create target
@@ -96,12 +98,12 @@ def wpscan(ip, result):
 
 if __name__ == '__main__':
     r = result.result()
-    #wapiti('10.0.0.55', r, '/home/')
-    #print r.webreport
+    wapiti('218.107.132.98', r, '/tmp/1/')
+    print r.webreport
     #openvas('10.1.153.33', r)
     #print r.openvas_report
-    wpscan('98.126.79.170', r)
-    for line in r.wpscan_output:
-        print line
+    #wpscan('98.126.79.170', r)
+    #for line in r.wpscan_output:
+    #    print line
 
 
