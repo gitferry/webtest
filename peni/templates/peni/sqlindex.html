@@ -12,10 +12,13 @@
     <div class="listdb">
         <input id="listdb_btn" class="listbtn" type="submit" value="列库"
                onclick="window.location = './getdb/?q=' + document.getElementById('text').value">
+        <br/>
         {% if dblist %}
             <table>
                 {% for line in dblist %}
-                    {{ line }}<br/>
+                    <tr>
+                        <td>{{ line }}</td>
+                    </tr>
                 {% endfor %}
             </table>
         {% endif %}
