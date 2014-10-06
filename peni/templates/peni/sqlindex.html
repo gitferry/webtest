@@ -6,14 +6,14 @@
 
 <body>
     <div id="search">
-        <input class="text" type="text" name="q" data-items="4" data-provide="typeahead" autocomplete="off" id="text" value={{ url }}>
+        <input class="text" type="text" name="q" value={{ url }}>
         <br>
     </div>
     <div class="listdb">
         <input id="listdb_btn" class="listbtn" type="submit" value="列库"
                onclick="window.location = './getdb/?q=' + document.getElementById('text').value">
         {% if dblist %}
-            <table border="1">
+            <table>
                 {% for line in dblist %}
                     <tr>{{ line }}</tr>
                 {% endfor %}
