@@ -41,11 +41,11 @@
   			{
   				if (xmlhttp.readyState==4 && xmlhttp.status==200)
   				{
-  					document.getElementById("db").innerHTML+=xmlhttp.responseText;
+  					document.getElementById("table").innerHTML+=xmlhttp.responseText;
   				}
   			}
   			var target = document.getElementById("text").value;
-            var target2 = document.getElementById("text2".value);
+            var target2 = document.getElementById("text2").value;
   			var url = './getable/?q=' + target + '&db=' + target2;
   			xmlhttp.open("GET",url,true);
   			xmlhttp.send();
@@ -68,11 +68,10 @@
     </div>
     <input id="text2" class="text" type="text" name="q2">
         <br>
-    <div class="listable">
+    <div class="listable" id="table">
         <input id="listable_btn" class="listbtn" type="submit" value="列表"
                onclick="gettable()">
         <br/>
-
     </div>
 </body>
 </html>
