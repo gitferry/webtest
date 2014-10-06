@@ -11,7 +11,7 @@
     </div>
     <div class="listdb">
         <input id="listdb_btn" class="listbtn" type="submit" value="列库"
-               onclick="window.location = './getdb/?q=' + document.getElementById('text').innerText">
+               onclick="window.location = './getdb/?q=' + document.getElementById('text').value">
         <br/>
         {% if dblist %}
             <table>
@@ -25,7 +25,7 @@
     </div>
     <div class="listable">
         <input id="listable_btn" class="listbtn" type="submit" value="列表"
-               onclick="window.location = './getdb/?q=' + document.getElementById('text').innerText">
+               onclick="window.location = './getdb/?q=' + document.getElementById('text').value">
         <br/>
         {% if dblist %}
             <table>
