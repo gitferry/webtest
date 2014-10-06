@@ -33,9 +33,9 @@ def search(request):
 
 def scan_wapiti(request, scan_url, r):
 	ran = str(random.randint(0, 10000))
-	os.makedirs('/home/penetration/webtest/peni/static/peni/' + ran + '/')
-	scan.wapiti(scan_url, r, '/home/penetration/webtest/peni/static/peni/' + ran + '/')
-	return HttpResponseRedirect('../../static/peni/' + ran + '/generated_report/index.html')
+	os.makedirs('/home/webtest/peni/static/peni/' + ran + '/')
+	scan.wapiti(scan_url, r, '/home/webtest/peni/static/peni/' + ran + '/')
+	return HttpResponseRedirect('../../static/peni/' + ran + '/index.html')
 
 def scan_openvas(request, scan_url, r):
 	scan.openvas(scan_url, r)
