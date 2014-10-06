@@ -3,6 +3,7 @@ from func import information_gathering, result
 from func import exploit, scan
 from models import PortTarget, Port, WebInfo
 from django.http import HttpResponseRedirect
+from django.http import HttpResponse
 import random
 import os
 
@@ -61,7 +62,12 @@ def sql_getdb(request):
 	r = result.result()
 	exploit.sqlmap_finddbs(scan_url, r)
 	dblist = r.sqlmap_dbs
-	return render(request, 'peni/sqlindex.html', {'dblist': dblist, 'url':scan_url})
+	content = ''
+	for db in dblist:
+		content += db + '<br>'
+	#return dblist
+	#return render(request, 'peni/sqlindex.html', {'dblist': dblist, 'url':scan_url})
+	return HttpResponse(content)
 
 def sql_getable(request):
 	scan_url = request.GET['q']

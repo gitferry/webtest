@@ -1,7 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>{% block title %}SQL Injection Site{% endblock %}</title>
+	<title>{% block title %}SQL Injection Site{% endblock %}</title>
+	<script type="text/javascript">
+		function getdb()
+		{
+			var xmlhttp;
+			if (window.XMLHttpRequest)
+  			{// code for IE7+, Firefox, Chrome, Opera, Safari
+  				xmlhttp=new XMLHttpRequest();
+  			}
+  			else
+  			{// code for IE6, IE5
+  				xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+  			}
+  			xmlhttp.onreadystatechange=function()
+  			{
+  				if (xmlhttp.readyState==4 && xmlhttp.status==200)
+  				{
+  					document.getElementById("db").innerHTML+=xmlhttp.responseText;
+  				}
+  			}
+  			var target = document.getElementById("text").value;
+  			var url = './getdb/?q=' + target;
+  			xmlhttp.open("GET",url,true);
+  			xmlhttp.send();
+		}
+		function gettable()
+		{
+			var xmlhttp;
+			if (window.XMLHttpRequest)
+  			{// code for IE7+, Firefox, Chrome, Opera, Safari
+  				xmlhttp=new XMLHttpRequest();
+  			}
+  			else
+  			{// code for IE6, IE5
+  				xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+  			}
+  			xmlhttp.onreadystatechange=function()
+  			{
+  				if (xmlhttp.readyState==4 && xmlhttp.status==200)
+  				{
+  					document.getElementById("db").innerHTML+=xmlhttp.responseText;
+  				}
+  			}
+  			var target = document.getElementById("text").value;
+  			var url = './getdb/?q=' + target;
+  			xmlhttp.open("GET",url,true);
+  			xmlhttp.send();
+		}
+</script>
 </head>
 
 <body>
@@ -9,33 +57,21 @@
         <input id="text" class="text" type="text" name="q" value={{ url }}>
         <br>
     </div>
-    <div class="listdb">
+    <div class="listdb" id="db">
+        <!--<input id="listdb_btn" class="listbtn" type="submit" value="列库"
+               onclick="window.location = './getdb/?q=' + document.getElementById('text').value">-->
         <input id="listdb_btn" class="listbtn" type="submit" value="列库"
-               onclick="window.location = './getdb/?q=' + document.getElementById('text').value">
+               onclick="getdb()">
         <br/>
-        {% if dblist %}
-            <table>
-                {% for line in dblist %}
-                    <tr>
-                        <td>{{ line }}</td>
-                    </tr>
-                {% endfor %}
-            </table>
-        {% endif %}
+
     </div>
+    <input id="text" class="text" type="text" name="q">
+        <br>
     <div class="listable">
         <input id="listable_btn" class="listbtn" type="submit" value="列表"
                onclick="window.location = './getdb/?q=' + document.getElementById('text').value">
         <br/>
-        {% if dblist %}
-            <table>
-                {% for line in dblist %}
-                    <tr>
-                        <td>{{ line }}</td>
-                    </tr>
-                {% endfor %}
-            </table>
-        {% endif %}
+
     </div>
 </body>
 </html>
