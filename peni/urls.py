@@ -8,4 +8,5 @@ urlpatterns = patterns('',
 	url(r'scan/$', views.bug_scan, name='scan'),
 	url(r'sql/$', views.sql_injection, name='sql'),
 	url(r'sql/getdb/$', views.sql_getdb, name='sqldb'),
+	url(r'sql/getable/$', views.sql_getable, name='sqltable'),
 )
