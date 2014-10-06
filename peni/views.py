@@ -55,3 +55,14 @@ def bug_scan(request):
 		return scan_openvas(request, scan_url, r)
 	elif choose == '3':
 		return scan_wps(request, scan_url, r)
+
+def sql_getdb(request):
+	scan_url = request.GET['q']
+	r = result.result()
+	exploit.sqlmap_finddbs(scan_url, r)
+	dblist = r.sqlmap_dbs
+	return render(request, 'peni/sqlindex.html', {'dblist': dblist})
+
+def sql_injection(request):
+	return render(request, 'peni/sqlindex.html', {})
+
