@@ -11,7 +11,7 @@
     </div>
     <div class="listdb">
         <input id="listdb_btn" class="listbtn" type="submit" value="列库"
-               onclick="window.location = './peni/scan/?q=' + document.getElementById('text').value">
+               onclick="window.location = '/peni/scan/?q=' + document.getElementById('text').value">
         {% if dblist %}
             <table border="1">
                 {% for line in dblist %}
