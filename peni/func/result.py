@@ -10,5 +10,6 @@ class result():
     wpscan_output = []
     sqlmap_dbs = []
     sqlmap_tables = {}
+    exploit_db = {}
 
 
