@@ -61,7 +61,7 @@ def sql_getdb(request):
 	r = result.result()
 	exploit.sqlmap_finddbs(scan_url, r)
 	dblist = r.sqlmap_dbs
-	return render(request, 'peni/sqlindex.html', {'dblist': dblist})
+	return render(request, 'peni/sqlindex.html', {'dblist': dblist, 'url':scan_url})
 
 def sql_injection(request):
 	return render(request, 'peni/sqlindex.html', {})

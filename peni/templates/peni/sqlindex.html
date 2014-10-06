@@ -1,18 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    {% load staticfiles %}
     <title>{% block title %}SQL Injection Site{% endblock %}</title>
 </head>
 
 <body>
     <div id="search">
-        {% block search %}
-                <input class="text" type="text" name="q" data-items="4" data-provide="typeahead" autocomplete="off" id="text">
-                <input id="search_btn" class="btn btn-info" type="submit" value="端口扫描"
-                       onclick="window.location = './peni/sql/getdb/?q=' + document.getElementById('text').value">
-                <br>
-        {% endblock %}
+        <input class="text" type="text" name="q" data-items="4" data-provide="typeahead" autocomplete="off" id="text" value={{ url }}>
+        <br>
+    </div>
+    <div class="listdb">
+        <input id="listdb_btn" class="listbtn" type="submit" value="列库"
+               onclick="window.location = './peni/search/?q=' + document.getElementById('text').value">
+        {% if dblist %}
+            <table border="1">
+                {% for line in dblist %}
+                    <tr>{{ line }}</tr>
+                {% endfor %}
+            </table>
+        {% endif %}
     </div>
 </body>
 </html>
