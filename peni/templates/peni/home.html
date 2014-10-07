@@ -7,25 +7,23 @@
 </head>
 
 <body>
+    <div id="logo">
+        <img  src="{% static 'peni/logo.png' %}">
+    </div>
     <div id="search">
-        {% block search %}
-            <div class="intro">
-                <img class="img-logo" height="200" title="ZoomEye - Cyberspace Search Engine" src="{% static 'peni/logo.png' %}">
-                <br>
-            </div>
-                <input class="text" type="text" name="q" data-items="4" data-provide="typeahead" autocomplete="off" id="text">
-                <input id="search_btn" class="btn btn-info" type="submit" value="端口扫描"
-                       onclick="window.location = './peni/search/?q=' + document.getElementById('text').value">
-                <input id="scan_btn1" class="btn btn-info" type="submit" value="漏洞扫描"
-                       onclick="window.location = './peni/scan/?q=' + document.getElementById('text').value + '&id=1'">
-                <input id="scan_btn2" class="btn btn-info" type="submit" value="漏洞扫描2"
-                       onclick="window.location = './peni/scan/?q=' + document.getElementById('text').value + '&id=2'">
-                <input id="scan_btn3" class="btn btn-info" type="submit" value="漏洞扫描3"
-                       onclick="window.location = './peni/scan/?q=' + document.getElementById('text').value + '&id=3'">
-                <input id="sql_btn" class="btn btn-info" type="submit" value="sql注入"
-                       onclick="window.location = './peni/sql/'">
-                <br>
-        {% endblock %}
+        <input type="text" name="q" data-items="4" data-provide="typeahead" autocomplete="off" id="text">
+        <input id="search_btn" class="btn btn-info" type="submit" value="端口扫描"
+               onclick="window.location = './peni/search/?q=' + document.getElementById('text').value">
+        <input id="scan_btn1" class="btn btn-info" type="submit" value="漏洞扫描"
+               onclick="window.location = './peni/scan/?q=' + document.getElementById('text').value + '&id=1'">
+        <input id="scan_btn2" class="btn btn-info" type="submit" value="漏洞扫描2"
+               onclick="window.location = './peni/scan/?q=' + document.getElementById('text').value + '&id=2'">
+        <input id="scan_btn3" class="btn btn-info" type="submit" value="漏洞扫描3"
+               onclick="window.location = './peni/scan/?q=' + document.getElementById('text').value + '&id=3'">
+        <input id="sql_btn" class="btn btn-info" type="submit" value="sql注入"
+               onclick="window.location = './peni/sql/'">
+        <input id="pwd_crack" class="btn btn-info" type="submit" value="密码爆破"
+               onclick="window.location = './peni/pwd/'">
     </div>
 </body>
 </html>

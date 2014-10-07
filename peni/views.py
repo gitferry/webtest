@@ -96,6 +96,8 @@ def sql_getfiles(request):
 	content += '</table>'
 	return HttpResponse(content)
 
+def pwd_crack(request):
+	return render(request, 'peni/pwdcrack.html', {})
 
 def sql_injection(request):
 	return render(request, 'peni/sqlindex.html', {})
