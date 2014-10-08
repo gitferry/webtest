@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from func import information_gathering, result
-from func import exploit, scan
+from func import exploit, scan, bruteforce
 from models import PortTarget, Port, WebInfo
 from django.http import HttpResponseRedirect
 from django.http import HttpResponse
@@ -98,7 +98,7 @@ def sql_getfiles(request):
 
 def find_bug_detail(request):
 	path = request.GET['q']
-	content = '<textarea>' + open(path).read() + '</textarea>'
+	content = '<textarea >' + open(path).read() + '</textarea>'
 	return HttpResponse(content)
 
 def search_bug(request):
@@ -106,6 +106,13 @@ def search_bug(request):
 	r = result.result()
 	exploit.exploit_db(param, r)
 	return render(request, 'peni/bugdetail.html', {'content': r.exploit_db})
+
+def pwd_get(request):
+	url = request.GET['q']
+	username = request.GET['p']
+	r = result.result()
+	bruteforce.bruteforce_wordpress(url, username, r)
+	return render(request, 'peni/pwdcrack.html', {'pwd': r.bruteforce_wordpress})
 
 def pwd_crack(request):
 	return render(request, 'peni/pwdcrack.html', {})

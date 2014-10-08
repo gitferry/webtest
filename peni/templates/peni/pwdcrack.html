@@ -1,6 +1,24 @@
-<h1>{{ url }}扫描结果</h1>
-<ul>
-{% for line in content %}
-    <li>{{ line }}</li>
-{% endfor %}
-</ul>
+<html>
+<head>
+    {% load staticfiles %}
+    <link rel="stylesheet" type="text/css" href="{% static 'peni/style.css' %}" />
+    <title>{% block title %}密码爆破{% endblock %}</title>
+</head>
+<body>
+    <div id="search">
+        URL:<input class="text" type="text" name="q" id="url">
+        <br/>
+        Username:<input class="text" type="text" name="q" id="username">
+        <input class="btn btn-info" type="submit" value="密码爆破"
+               onclick="window.location = './crack/?q=' +
+               document.getElementById('url').value + '&p=' + document.getElementById('username').value">
+    </div>
+    <div id="list">
+        <ul>
+            {% if pwd != 'Not Found' %}
+                <h>Password is {{ pwd }}</h>
+            {% endif %}
+        </ul>
+    </div>
+</body>
+</html>

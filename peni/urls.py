@@ -13,4 +13,5 @@ urlpatterns = patterns('',
 	url(r'bug/$', views.bug_detail, name='bug'),
 	url(r'bug/find/$', views.search_bug, name='bugsearch'),
 	url(r'bug/getdetail/$', views.find_bug_detail, name='bugdetail'),
+	url(r'pwd/$', views.pwd_crack, name='pwdcrack'),
 )

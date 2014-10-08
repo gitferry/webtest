@@ -11,7 +11,7 @@
         <img  src="{% static 'peni/logo.png' %}">
     </div>
     <div id="search">
-        <input type="text" name="q" data-items="4" data-provide="typeahead" autocomplete="off" id="text">
+        <input type="text" name="q" data-items="4" data-provide="typeahead" autocomplete="off" class="text">
         <input id="search_btn" class="btn btn-info" type="submit" value="端口扫描"
                onclick="window.location = './peni/search/?q=' + document.getElementById('text').value">
         <input id="scan_btn1" class="btn btn-info" type="submit" value="漏洞扫描"
