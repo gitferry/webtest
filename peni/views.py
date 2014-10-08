@@ -98,8 +98,7 @@ def sql_getfiles(request):
 
 def find_bug_detail(request):
 	path = request.GET['q']
-	content = open(path).read()
-	content.replace(r'/n', r'<br/>')
+	content = '<textarea>' + open(path).read() + '</textarea>'
 	return HttpResponse(content)
 
 def search_bug(request):
