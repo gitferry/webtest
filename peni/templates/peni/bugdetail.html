@@ -1,0 +1,23 @@
+<html>
+<head>
+    {% load staticfiles %}
+    <link rel="stylesheet" type="text/css" href="{% static 'peni/style.css' %}" />
+    <title>{% block title %}Web Test Site{% endblock %}</title>
+</head>
+<body>
+    <div id="search">
+        <input id="text" class="text" type="text" name="q">
+        <input class="btn btn-info" type="submit" value="查找漏洞"
+               onclick="window.location = './peni/bug/search/?p=' + document.getElementById('text').value">
+    </div>
+    <div id="list">
+        <ul>
+            {% if content %}
+                {% for key, value in content %}
+                    <li>{{ key }}|<a href="{{ value }}"></a></li>
+                {% endfor %}
+            {% endif %} 
+        </ul>
+    </div>
+</body>
+</html>

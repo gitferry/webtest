@@ -96,8 +96,18 @@ def sql_getfiles(request):
 	content += '</table>'
 	return HttpResponse(content)
 
+def search_bug(request):
+	param = request.GET['p']
+	r = result.result()
+	exploit.exploit_db(param, r)
+
+	return render(request, 'peni/bugdetail.html', {'content': r.exploit_db})
+
 def pwd_crack(request):
 	return render(request, 'peni/pwdcrack.html', {})
+
+def bug_detail(request):
+	return render(request, 'peni/bugdetail.html', {})
 
 def sql_injection(request):
 	return render(request, 'peni/sqlindex.html', {})

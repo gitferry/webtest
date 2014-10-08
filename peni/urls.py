@@ -10,4 +10,6 @@ urlpatterns = patterns('',
 	url(r'sql/getdb/$', views.sql_getdb, name='sqldb'),
 	url(r'sql/getable/$', views.sql_getable, name='sqltable'),
 	url(r'sql/getfiles/$', views.sql_getfiles, name='sqlfiles'),
+	url(r'bug/$', views.bug_detail, name='bug'),
+	url(r'bug/search/$', views.search_bug, name='bugsearch'),
 )
