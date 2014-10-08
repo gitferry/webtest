@@ -14,7 +14,7 @@
         <ul>
             {% if content %}
                 {% for key, value in content.items %}
-                    <li>{{ key }}|<a href="{{ value }}"></a></li>
+                    <li><a href="{{ value }}">{{ key }}</a></li>
                 {% endfor %}
             {% endif %} 
         </ul>
