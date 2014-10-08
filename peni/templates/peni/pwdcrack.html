@@ -5,6 +5,7 @@
     <title>{% block title %}密码爆破{% endblock %}</title>
 </head>
 <body>
+    <h1>Wordpress 账号破解</h1>
     <div id="search">
         URL:<input class="text" type="text" name="q" id="url">
         <br/>
@@ -15,10 +16,29 @@
     </div>
     <div id="list">
         <ul>
-            {% if pwd != 'Not Found' %}
-                <h>Password is {{ pwd }}</h>
+            {% if pwd != '' %}
+                {% if pwd != 'Not Found' %}
+                    <h>Password is {{ pwd }}</h>
+                {% endif %}
             {% endif %}
         </ul>
     </div>
+    <h1>MD5 密码破解</h1>
+        <div id="search">
+            MD5码:<input class="text" type="text" name="q" id="md5">
+            <br/>
+            <input class="btn btn-info" type="submit" value="MD5破解"
+                   onclick="window.location = './md5/?q=' +
+                   document.getElementById('md5').value">
+        </div>
+        <div id="list">
+            <ul>
+            {% if md5 %}
+                {% for key, value in md5.items %}
+                    <li><a href="{{ key }}">{{ key }}</a>:{{ value }}</li>
+                {% endfor %}
+            {% endif %}
+            </ul>
+        </div>
 </body>
 </html>

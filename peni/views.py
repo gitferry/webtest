@@ -114,6 +114,12 @@ def pwd_get(request):
 	bruteforce.bruteforce_wordpress(url, username, r)
 	return render(request, 'peni/pwdcrack.html', {'pwd': r.bruteforce_wordpress})
 
+def md5_crack(request):
+	md5_string = request.GET['q']
+	r = result.result()
+	bruteforce.md5_crack(md5_string, r)
+	return render(request, 'peni/pwdcrack.html', {'md5': r.bruteforce_md5})
+
 def pwd_crack(request):
 	return render(request, 'peni/pwdcrack.html', {})
 
