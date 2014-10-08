@@ -13,7 +13,7 @@
     <div id="list">
         <ul>
             {% if content %}
-                {% for key, value in content %}
+                {% for key, value in content.items %}
                     <li>{{ key }}|<a href="{{ value }}"></a></li>
                 {% endfor %}
             {% endif %} 
