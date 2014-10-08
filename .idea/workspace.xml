@@ -2,14 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="01301a0e-0392-45b2-9ad9-d4446ad31b45" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/peni/templates/peni/bugdetail.html" afterPath="$PROJECT_DIR$/peni/templates/peni/bugdetail.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/peni/templates/peni/home.html" afterPath="$PROJECT_DIR$/peni/templates/peni/home.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/peni/templates/peni/pwdcrack.html" afterPath="$PROJECT_DIR$/peni/templates/peni/pwdcrack.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/peni/templates/peni/sqlindex.html" afterPath="$PROJECT_DIR$/peni/templates/peni/sqlindex.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/peni/static/peni/style.css" afterPath="$PROJECT_DIR$/peni/static/peni/style.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/peni/urls.py" afterPath="$PROJECT_DIR$/peni/urls.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/peni/views.py" afterPath="$PROJECT_DIR$/peni/views.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="webtest.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -50,22 +43,20 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="sqlindex.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/peni/templates/peni/sqlindex.html">
+      <file leaf-file-name="urls.py" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/peni/urls.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="100" column="10" selection-start="3004" selection-end="3004" vertical-scroll-proportion="-21.483871" vertical-offset="1534" max-vertical-offset="2508">
+            <state line="16" column="54" selection-start="723" selection-end="723" vertical-scroll-proportion="0.30646765" vertical-offset="0" max-vertical-offset="1005">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="views.py" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/peni/views.py">
+      <file leaf-file-name="sqlindex.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/peni/templates/peni/sqlindex.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="114" column="79" selection-start="3440" selection-end="3440" vertical-scroll-proportion="0.67164177" vertical-offset="1833" max-vertical-offset="2882">
-              <folding>
-                <element signature="e#0#35#0" expanded="true" />
-              </folding>
+            <state line="100" column="10" selection-start="3004" selection-end="3004" vertical-scroll-proportion="-21.483871" vertical-offset="1534" max-vertical-offset="2508">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -149,13 +140,13 @@
         <option value="$PROJECT_DIR$/peni/templates/peni/detail.html" />
         <option value="$PROJECT_DIR$/peni/func/scan.py" />
         <option value="$PROJECT_DIR$/peni/templates/peni/wpsdetail.html" />
-        <option value="$PROJECT_DIR$/peni/urls.py" />
         <option value="$PROJECT_DIR$/peni/static/peni/style.css" />
         <option value="$PROJECT_DIR$/peni/templates/peni/home.html" />
         <option value="$PROJECT_DIR$/peni/templates/peni/bugdetail.html" />
         <option value="$PROJECT_DIR$/peni/templates/peni/sqlindex.html" />
         <option value="$PROJECT_DIR$/peni/templates/peni/pwdcrack.html" />
         <option value="$PROJECT_DIR$/peni/views.py" />
+        <option value="$PROJECT_DIR$/peni/urls.py" />
       </list>
     </option>
   </component>
@@ -898,19 +889,19 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/peni/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="52" selection-start="671" selection-end="671" vertical-scroll-proportion="0.2845771" vertical-offset="0" max-vertical-offset="1005">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/peni/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="114" column="79" selection-start="3440" selection-end="3440" vertical-scroll-proportion="0.67164177" vertical-offset="1833" max-vertical-offset="2882">
+        <state line="102" column="0" selection-start="3039" selection-end="3039" vertical-scroll-proportion="0.40895522" vertical-offset="1833" max-vertical-offset="2882">
           <folding>
             <element signature="e#0#35#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/peni/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="16" column="54" selection-start="723" selection-end="723" vertical-scroll-proportion="0.30646765" vertical-offset="0" max-vertical-offset="1005">
+          <folding />
         </state>
       </provider>
     </entry>
