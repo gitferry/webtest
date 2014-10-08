@@ -4,7 +4,7 @@ body {
     font-size: 14px;
     line-height: 20px;
     background: url("map-bg.jpg");
-
+    text-align: center;
 }
 
 
@@ -15,7 +15,7 @@ body {
 }
 
 #search {
-    color: #444444;
+    color: #ffffff;
     font-size: 16px;
     padding: 5px 10px;
     margin: 0px auto;
