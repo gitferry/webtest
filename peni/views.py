@@ -96,6 +96,10 @@ def sql_getfiles(request):
 	content += '</table>'
 	return HttpResponse(content)
 
+def find_bug_detail(request):
+	path = request.GET['q']
+	return render(request, path, {})
+
 def search_bug(request):
 	param = request.GET['q']
 	r = result.result()

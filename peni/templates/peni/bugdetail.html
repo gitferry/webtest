@@ -14,7 +14,7 @@
         <ul>
             {% if content %}
                 {% for key, value in content.items %}
-                    <li><a href="{{ value }}">{{ key }}</a></li>
+                    <li><a href="http://10.1.10.117:8000/peni/bug/getdetail/?q={{ value }}">{{ key }}</a></li>
                 {% endfor %}
             {% endif %} 
         </ul>
