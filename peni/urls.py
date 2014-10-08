@@ -15,4 +15,5 @@ urlpatterns = patterns('',
 	url(r'bug/getdetail/$', views.find_bug_detail, name='bugdetail'),
 	url(r'pwd/$', views.pwd_crack, name='pwdcrack'),
 	url(r'pwd/crack/$', views.pwd_get, name='pwdget'),
+	url(r'pwd/md5/$', views.md5_crack, name='md5'),
 )
