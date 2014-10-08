@@ -100,7 +100,6 @@ def search_bug(request):
 	param = request.GET['p']
 	r = result.result()
 	exploit.exploit_db(param, r)
-
 	return render(request, 'peni/bugdetail.html', {'content': r.exploit_db})
 
 def pwd_crack(request):

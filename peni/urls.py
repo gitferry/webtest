@@ -11,5 +11,5 @@ urlpatterns = patterns('',
 	url(r'sql/getable/$', views.sql_getable, name='sqltable'),
 	url(r'sql/getfiles/$', views.sql_getfiles, name='sqlfiles'),
 	url(r'bug/$', views.bug_detail, name='bug'),
-	url(r'bug/search/$', views.search_bug, name='bugsearch'),
+	url(r'bug/find/$', views.search_bug, name='bugsearch'),
 )
