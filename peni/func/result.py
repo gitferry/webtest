@@ -11,5 +11,7 @@ class result():
     sqlmap_dbs = []
     sqlmap_tables = {}
     exploit_db = {}
+    bruteforce_md5 = {}
+    bruteforce_wordpress = ''
 
 

