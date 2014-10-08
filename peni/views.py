@@ -97,7 +97,7 @@ def sql_getfiles(request):
 	return HttpResponse(content)
 
 def search_bug(request):
-	param = request.GET['p']
+	param = request.GET['q']
 	r = result.result()
 	exploit.exploit_db(param, r)
 	return render(request, 'peni/bugdetail.html', {'content': r.exploit_db})
