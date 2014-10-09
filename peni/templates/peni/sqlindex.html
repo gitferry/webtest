@@ -20,7 +20,7 @@
   			{
   				if (xmlhttp.readyState==4 && xmlhttp.status==200)
   				{
-  					document.getElementById("db").innerHTML+=xmlhttp.responseText;
+  					document.getElementsByName("db").innerHTML+=xmlhttp.responseText;
   				}
   			}
   			var target = document.getElementById("text").value;
@@ -43,7 +43,7 @@
   			{
   				if (xmlhttp.readyState==4 && xmlhttp.status==200)
   				{
-  					document.getElementById("table").innerHTML+=xmlhttp.responseText;
+  					document.getElementsByName("table").innerHTML+=xmlhttp.responseText;
   				}
   			}
   			var target = document.getElementById("text").value;
@@ -67,7 +67,7 @@
   			{
   				if (xmlhttp.readyState==4 && xmlhttp.status==200)
   				{
-  					document.getElementById("files").innerHTML+=xmlhttp.responseText;
+  					document.getElementsByName("files").innerHTML+=xmlhttp.responseText;
   				}
   			}
   			var target = document.getElementById("text").value;
@@ -82,30 +82,31 @@
 
 <body>
     <div id="search">
-        <input class="text" type="text" name="q" value={{ url }}>
+        <input class="text" type="text" name="q" id="text" value={{ url }}>
         <br>
     </div>
-    <div id="list">
-        <!--<input id="listdb_btn" class="listbtn" type="submit" value="列库"
-               onclick="window.location = './getdb/?q=' + document.getElementById('text').value">-->
-        <input id="listdb_btn" class="btn btn-info" type="submit" value="列库"
+    <input id="listdb_btn" class="btn btn-info" type="submit" value="列库"
                onclick="getdb()">
-        <br/>
+    <br/>
+    <div id="list" name="db">
 
     </div>
-    <input class="text" type="text" name="q2">
+    <input class="text" type="text" name="q2" id="text2">
         <br>
-    <div id="list">
-        <input id="listable_btn" class="btn btn-info" type="submit" value="列表"
+
+    <input id="listable_btn" class="btn btn-info" type="submit" value="列表"
                onclick="gettable()">
         <br/>
-    </div>
-    <input class="text" type="text" name="q3">
-            <br>
     <div id="list">
-        <input id="listfiles_btn" class="btn btn-info" type="submit" value="Dump"
+
+    </div>
+    <input class="text" type="text" name="q3" id="text3">
+            <br>
+    <input id="listfiles_btn" class="btn btn-info" type="submit" value="Dump"
                onclick="getfiles()">
         <br/>
+    <div id="list">
+
     </div>
 </body>
 </html>
