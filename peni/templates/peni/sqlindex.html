@@ -20,7 +20,7 @@
   			{
   				if (xmlhttp.readyState==4 && xmlhttp.status==200)
   				{
-  					document.getElementById("db").innerHTML+=xmlhttp.responseText;
+  					document.getElementById("db").innerHTML=xmlhttp.responseText;
   				}
   			}
   			var target = document.getElementById("text").value;
@@ -43,7 +43,7 @@
   			{
   				if (xmlhttp.readyState==4 && xmlhttp.status==200)
   				{
-  					document.getElementById("table").innerHTML+=xmlhttp.responseText;
+  					document.getElementById("table").innerHTML=xmlhttp.responseText;
   				}
   			}
   			var target = document.getElementById("text").value;
@@ -67,7 +67,7 @@
   			{
   				if (xmlhttp.readyState==4 && xmlhttp.status==200)
   				{
-  					document.getElementById("files").innerHTML+=xmlhttp.responseText;
+  					document.getElementById("files").innerHTML=xmlhttp.responseText;
   				}
   			}
   			var target = document.getElementById("text").value;

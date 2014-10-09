@@ -14,7 +14,6 @@ h1 {
     background-color: #525252;
     margin: 0px auto;
     width: 50%;
-    padding: 10px;
 }
 
 .block {
@@ -39,7 +38,7 @@ h1 {
     padding: 5px 10px;
     margin: 0px auto;
     transition: all 0.8s ease 0s;
-    width: 450px;
+    width: 550px;
 }
 
 .text {
