@@ -36,7 +36,7 @@ def scan_wapiti(request, scan_url, r):
 	# ran = str(random.randint(0, 10000))
 	ran = 'scan'
 	# os.makedirs('/home/webtest/peni/static/peni/' + ran + '/')
-	scan.wapiti(scan_url, r, '/home/webtest/peni/static/peni/' + ran + '/')
+	# scan.wapiti(scan_url, r, '/home/webtest/peni/static/peni/' + ran + '/')
 	return HttpResponseRedirect('../../static/peni/' + ran + '/index.html')
 
 def scan_openvas(request, scan_url, r):

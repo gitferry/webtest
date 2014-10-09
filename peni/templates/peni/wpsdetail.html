@@ -6,10 +6,8 @@
 <body>
     <h1>{{ url }}扫描结果</h1>
     <div id="list">
-        <ul>
         {% for line in content %}
-            <li>{{ line }}</li>
+            {{ line }}
         {% endfor %}
-        </ul>
     </div>
 </body>
