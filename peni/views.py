@@ -93,7 +93,7 @@ def sql_getfiles(request):
 	content = '<table>'
 	for path in path_list:
 		fobj = open(path)
-		content += '<tr><td>' + path + '<td/><td>' + fobj.read(100) + '</td></tr>'
+		content += '<tr><td>' + fobj.read().replace('\n', '<br>') + '</td></tr>'
 	content += '</table>'
 	return HttpResponse(content)
 
