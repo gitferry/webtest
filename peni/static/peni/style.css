@@ -12,6 +12,8 @@ h1 {
 #list {
     text-align: left;
     background-color: #bfbfbf;
+    margin: 0px auto;
+    width: 50%;
 }
 
 
