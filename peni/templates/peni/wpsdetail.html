@@ -1,6 +1,15 @@
-<h1>{{ url }}扫描结果</h1>
-<ul>
-{% for line in content %}
-    <li>{{ line }}</li>
-{% endfor %}
-</ul>
+<head>
+    {% load staticfiles %}
+    <link rel="stylesheet" type="text/css" href="{% static 'peni/style.css' %}" />
+    <title>{% block title %}Basic Scan{% endblock %}</title>
+</head>
+<body>
+    <h1>{{ url }}扫描结果</h1>
+    <div id="list">
+        <ul>
+        {% for line in content %}
+            <li>{{ line }}</li>
+        {% endfor %}
+        </ul>
+    </div>
+</body>
