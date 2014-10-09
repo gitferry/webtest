@@ -7,22 +7,19 @@
 <body>
     <h1>Wordpress 账号破解</h1>
     <div id="search">
-        URL:<input class="text" type="text" name="q" id="url">
+        URL     :<input class="text" type="text" name="q" id="url">
         <br/>
         Username:<input class="text" type="text" name="q" id="username">
         <input class="btn btn-info" type="submit" value="密码爆破"
                onclick="window.location = './crack/?q=' +
                document.getElementById('url').value + '&p=' + document.getElementById('username').value">
-    </div>
-    <div id="list">
-        <ul>
-            {% if pwd != '' %}
+        {% if pwd %}
                 {% if pwd != 'Not Found' %}
-                    <h>Password is {{ pwd }}</h>
+                    <h1>Password is {{ pwd }}</h1>
                 {% endif %}
-            {% endif %}
-        </ul>
+        {% endif %}
     </div>
+
     <h1>MD5 密码破解</h1>
         <div id="search">
             MD5码:<input class="text" type="text" name="q" id="md5">
