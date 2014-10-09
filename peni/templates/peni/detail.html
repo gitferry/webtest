@@ -4,7 +4,7 @@
     <title>{% block title %}Basic Scan{% endblock %}</title>
 </head>
 <body>
-    <h1>{{ target.ip }}Web应用扫描结果</h1>
+    <h1>{{ target.ip }} Web应用扫描结果</h1>
     <div id="list">
         <ul>
         {% for info in target.webinfo_set.all %}
@@ -13,7 +13,7 @@
         </ul>
     </div>
 
-    <h1>{{ target.ip }}服务器端口扫描结果</h1>
+    <h1>{{ target.ip }} 服务器端口扫描结果</h1>
     <div id="list">
         <ul>
         {% for port in target.port_set.all %}

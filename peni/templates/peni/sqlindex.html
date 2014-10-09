@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    {% load staticfiles %}
+    <link rel="stylesheet" type="text/css" href="{% static 'peni/style.css' %}" />
 	<title>{% block title %}SQL Injection Site{% endblock %}</title>
 	<script type="text/javascript">
 		function getdb()
@@ -83,7 +85,7 @@
         <input class="text" type="text" name="q" value={{ url }}>
         <br>
     </div>
-    <div class="listdb" id="db">
+    <div id="list">
         <!--<input id="listdb_btn" class="listbtn" type="submit" value="列库"
                onclick="window.location = './getdb/?q=' + document.getElementById('text').value">-->
         <input id="listdb_btn" class="listbtn" type="submit" value="列库"
@@ -93,17 +95,17 @@
     </div>
     <input class="text" type="text" name="q2">
         <br>
-    <div class="listable" id="table">
+    <div id="list">
         <input id="listable_btn" class="listbtn" type="submit" value="列表"
                onclick="gettable()">
         <br/>
     </div>
     <input class="text" type="text" name="q3">
             <br>
-        <div class="listfiles" id="files">
-            <input id="listfiles_btn" class="listbtn" type="submit" value="Dump"
-                   onclick="getfiles()">
-            <br/>
-        </div>
+    <div id="list">
+        <input id="listfiles_btn" class="listbtn" type="submit" value="Dump"
+               onclick="getfiles()">
+        <br/>
+    </div>
 </body>
 </html>
