@@ -17,6 +17,16 @@ h1 {
     padding: 10px;
 }
 
+.block {
+    float: left;
+    width: 300px;
+}
+
+#content {
+    width: 50%;
+    height: 1000px;
+    margin: 0px auto;
+}
 
 #logo {
     margin: 0px auto;
