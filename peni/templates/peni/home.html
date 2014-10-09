@@ -11,8 +11,8 @@
         <img  src="{% static 'peni/logo.png' %}">
     </div>
     <div id="search">
-        <input type="text" name="q" id="text">
-        <input id="search_btn" class="btn btn-info" type="submit" value="端口扫描"
+        <input type="text" name="q" id="text" class="text">
+        <input id="search_btn" class="btn btn-info" type="submit" value="Basic Scan"
                onclick="window.location = './peni/search/?q=' + document.getElementById('text').value">
         <input id="scan_btn1" class="btn btn-info" type="submit" value="漏洞扫描"
                onclick="window.location = './peni/scan/?q=' + document.getElementById('text').value + '&id=1'">

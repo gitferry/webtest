@@ -1,13 +1,26 @@
-<h1>{{ target.ip }}Web应用扫描结果</h1>
-<ul>
-{% for info in target.webinfo_set.all %}
-    <li>{{ info.info }}</li>
-{% endfor %}
-</ul>
+<head>
+    {% load staticfiles %}
+    <link rel="stylesheet" type="text/css" href="{% static 'peni/style.css' %}" />
+    <title>{% block title %}Basic Scan{% endblock %}</title>
+</head>
+<body>
+    <div id="list">
+        <h1>{{ target.ip }}Web应用扫描结果</h1>
+        <ul>
+        {% for info in target.webinfo_set.all %}
+            <li>{{ info.info }}</li>
+        {% endfor %}
+        </ul>
+    </div>
 
-<h1>{{ target.ip }}服务器端口扫描结果</h1>
-<ul>
-{% for port in target.port_set.all %}
-    <li>{{ port.number }}: {{ port.details }}</li>
-{% endfor %}
-</ul>
+    <div id="list">
+        <h1>{{ target.ip }}服务器端口扫描结果</h1>
+        <ul>
+        {% for port in target.port_set.all %}
+            <li>{{ port.number }}: {{ port.details }}</li>
+        {% endfor %}
+        </ul>
+    </div>
+
+</body>
+

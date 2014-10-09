@@ -4,9 +4,12 @@ body {
     font-size: 14px;
     line-height: 20px;
     background: url("map-bg.jpg");
-    text-align: center;
 }
 
+#list {
+    margin: 0px auto;
+    text-align: left;
+}
 
 
 #logo {
